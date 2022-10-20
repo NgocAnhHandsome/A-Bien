@@ -1,0 +1,6 @@
+sht30.pbi: \
+  C:\Users\hnaco\Desktop\Surveillance_equipment_Clover-work_on\1.Sensor\1.SHT30\user\sht30.c \
+  C:\Users\hnaco\Desktop\Surveillance_equipment_Clover-work_on\1.Sensor\1.SHT30\user/sht30.h \
+  C:\Users\hnaco\Desktop\Surveillance_equipment_Clover-work_on\1.Sensor\1.SHT30\project\..\library\stm8s.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\stm8\inc\c\intrinsics.h \
+  C:\Users\hnaco\Desktop\Surveillance_equipment_Clover-work_on\1.Sensor\1.SHT30\user/i2c.h
