@@ -2,6 +2,8 @@
 #include "uart.h" 
 #include "device_command.h"
 
+// 0x0347C478
+uint32_t a;
 int i,j,k,n;
 
 _comm_type_command_e Type_command_arr[] = {COMM_AskType, COMM_AnswerType, COMM_AskData, COMM_AnswerData};
@@ -25,50 +27,28 @@ void Show_detect(_comm_data_struct_detect_t detect_test);
 
 int main()
 {
-	
 	INIT_UART_2(9600);
-	UART2_SendString("TEST: \n");
+	INIT_UART_1(9600);
+	UART1_SendString("TEST: \n");
 	
-	for(i = 0; i < 4;i++)
-	{
-		for(j = 0; j < 8; j++)
-		{
-			for(k = 0; k < 3; k++)
-			{
-				test.type_msg = Type_command_arr[i];
-				test.port_number = Port_number_arr[j];
-				test.type_sensor = Type_sensor_arr[k];
-				test.Sensor.Sensor_1      = 1.42;
-				if(comm_create_command(&test) == COMM_OK)
-				{
-					UART2_SendString(test.datastr);
-					UART2_SendString("-Done\n");
-					if(comm_detect_command(test.datastr, &detect_test) == COMM_OK)
-					{
-						Show_detect(detect_test);
-					}
-					else
-					{
-						UART2_SendString("Error detect\n");
-					}
-				}
-				else
-				{
-					UART2_SendString("Error\n");
-				}
-				delay(100);
-			}
-		}
-	}
-
-
 	while(1)
 	{
-    if(ringbuffer_get_arr(&ringbuffer_Test, Temp_data) == Ringbuffer_get_arr_done)
-    {
-      UART2_SendString(Temp_data);
-      UART2_SendString("\n");
-    }		
+//		TimeOut--;
+//		if(TimeOut == 0) 
+//		{
+//			UART1_SendString("Start: \n");
+//			Flag2_Receive = 0;
+//			if(ringbuffer_get_arr(&ringbuffer_Test, Temp_data) == Ringbuffer_get_arr_done)
+//			{
+//				UART1_SendString(Temp_data);
+//				UART1_SendString("\n");
+//				comm_detect_command(Temp_data, &detect_test);
+//				Show_detect(detect_test);
+//			}				
+//		}
+		UART1_SendString("1111111\n");
+		a = TIME_OUT;
+		while(a --);
 	}
 } 
 
@@ -85,16 +65,16 @@ void Show_detect(_comm_data_struct_detect_t detect_test)
 	switch(detect_test.type_msg)
 	{
 		case COMM_AskType:
-			UART2_SendString("COMM_AskType\n");
+			UART1_SendString("COMM_AskType\n");
 			break;
 		case COMM_AnswerType:
-			UART2_SendString("COMM_AnswerType\n");
+			UART1_SendString("COMM_AnswerType\n");
 			break;	
 		case COMM_AskData:
-			UART2_SendString("COMM_AskData\n");
+			UART1_SendString("COMM_AskData\n");
 			break;		
 		case COMM_AnswerData:
-			UART2_SendString("COMM_AnswerData\n");
+			UART1_SendString("COMM_AnswerData\n");
 			break;
 		default:
 			break;
@@ -102,28 +82,28 @@ void Show_detect(_comm_data_struct_detect_t detect_test)
 	switch(detect_test.port_number)
 	{
 		case COMM_Port1:
-			UART2_SendString("COMM_Port1\n");
+			UART1_SendString("COMM_Port1\n");
 			break;
 		case COMM_Port2:
-			UART2_SendString("COMM_Port2\n");
+			UART1_SendString("COMM_Port2\n");
 			break;
 		case COMM_Port3:
-			UART2_SendString("COMM_Port3\n");
+			UART1_SendString("COMM_Port3\n");
 			break;
 		case COMM_Port4:
-			UART2_SendString("COMM_Port4\n");
+			UART1_SendString("COMM_Port4\n");
 			break;
 		case COMM_Port5:
-			UART2_SendString("COMM_Port5\n");
+			UART1_SendString("COMM_Port5\n");
 			break;
 		case COMM_Port6:
-			UART2_SendString("COMM_Port6\n");
+			UART1_SendString("COMM_Port6\n");
 			break;
 		case COMM_Port7:
-			UART2_SendString("COMM_Port7\n");
+			UART1_SendString("COMM_Port7\n");
 			break;
 		case COMM_Port8:
-			UART2_SendString("COMM_Port8\n");
+			UART1_SendString("COMM_Port8\n");
 			break;
 		default:
 			break;
@@ -131,20 +111,20 @@ void Show_detect(_comm_data_struct_detect_t detect_test)
 	switch(detect_test.type_sensor)
 	{
 		case Sensor_1:
-			UART2_SendString("Sensor_1\n");
+			UART1_SendString("Sensor_1\n");
 			break;
 		case Sensor_2:
-			UART2_SendString("Sensor_2\n");
+			UART1_SendString("Sensor_2\n");
 			break;
 		case Sensor_3:
-			UART2_SendString("Sensor_3\n");
+			UART1_SendString("Sensor_3\n");
 			break;
 		default:
 			break;
 	}
 	char s[10];
 	sprintf(s,"Sensor_1: %f\n", detect_test.Sensor.Sensor_1);
-	UART2_SendString(s);
+	UART1_SendString(s);
 //	sprintf(s,"Sensor_2: %f\n", detect_test.Sensor.Sensor_2);
 //	UART2_SendString(s);
 //	sprintf(s,"Sensor_3: %f\n", detect_test.Sensor.Sensor_3);
@@ -174,3 +154,16 @@ void Show_detect(_comm_data_struct_detect_t detect_test)
 //	sprintf(s,"Sensor_15:%f\n", detect_test.Sensor.Sensor_15);
 //	UART2_SendString(s);		
 }
+
+//		if(Flag2_Receive)
+//		{
+//			UART1_SendString("Start: \n");
+//			Flag2_Receive = 0;
+//			if(ringbuffer_get_arr(&ringbuffer_Test, Temp_data) == Ringbuffer_get_arr_done)
+//			{
+//				UART1_SendString(Temp_data);
+//				UART1_SendString("\n");
+//				comm_detect_command(Temp_data, &detect_test);
+//				Show_detect(detect_test);
+//			}			
+//		}	

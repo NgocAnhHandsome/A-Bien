@@ -9,6 +9,7 @@
 #include "uart.h" 
 
 
+volatile uint32_t TimeOut;
 
 char Flag1_Receive = 0;
 char Array1_Receive[string_size];
@@ -155,9 +156,13 @@ void USART2_IRQHandler(void)
 {
 	if ((USART2->SR & USART_SR_RXNE) != 0)
 	{
+		TimeOut = TIME_OUT;
 		temp_data = USART_ReceiveData(USART2);
-//		UART2_SendChar(temp_data);
 		ringbuffer_push(&ringbuffer_Test, temp_data);
+		if(temp_data == '#')
+		{
+			Flag2_Receive = 1;
+		}
 	}
 	USART_ClearITPendingBit(USART2, USART_SR_RXNE);
 }

@@ -27,16 +27,6 @@ Project File Date:  10/18/2022
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\Keil C\ARM\ARMCC\Bin'
 Rebuild target 'test'
-compiling ringbuffer.c...
-..\USER\ringbuffer.h(43): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\USER\ringbuffer.c(18): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "unsigned char *"
-          _rb_type_t_->data          = arr_buffer;
-..\USER\ringbuffer.c(147): warning:  #1-D: last line of file ends without a newline
-  }
-..\USER\ringbuffer.c(93): warning:  #550-D: variable "location_end"  was set but never used
-      unsigned int location_end = 0;
-..\USER\ringbuffer.c: 4 warnings, 0 errors
 compiling device_command.c...
 ..\USER\device_command.h(90): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -58,11 +48,20 @@ compiling device_command.c...
           _data_struct_->port_number = conver_unsigned_strToint(temp_str[2]);
 ..\USER\device_command.c(129): warning:  #188-D: enumerated type mixed with another type
           _data_struct_->type_sensor = conver_unsigned_strToint(temp_str[3]);
-..\USER\device_command.c(352): warning:  #1-D: last line of file ends without a newline
+..\USER\device_command.c(351): warning:  #1-D: last line of file ends without a newline
   }
 ..\USER\device_command.c: 11 warnings, 0 errors
+compiling ringbuffer.c...
+..\USER\ringbuffer.h(43): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\USER\ringbuffer.c(18): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "unsigned char *"
+          _rb_type_t_->data          = arr_buffer;
+..\USER\ringbuffer.c(147): warning:  #1-D: last line of file ends without a newline
+  }
+..\USER\ringbuffer.c(93): warning:  #550-D: variable "location_end"  was set but never used
+      unsigned int location_end = 0;
+..\USER\ringbuffer.c: 4 warnings, 0 errors
 compiling misc.c...
-compiling stm32f10x_gpio.c...
 compiling main.c...
 ..\USER\ringbuffer.h(43): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -70,6 +69,7 @@ compiling main.c...
   #endif
 ..\USER\main.c: 2 warnings, 0 errors
 compiling stm32f10x_rcc.c...
+compiling stm32f10x_gpio.c...
 compiling uart.c...
 ..\USER\ringbuffer.h(43): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -79,7 +79,7 @@ compiling stm32f10x_usart.c...
 compiling stm32f10x_tim.c...
 compiling system_stm32f10x.c...
 linking...
-Program Size: Code=11180 RO-data=444 RW-data=128 ZI-data=2032  
+Program Size: Code=1528 RO-data=268 RW-data=128 ZI-data=1712  
 ".\Objects\test_senser.axf" - 0 Error(s), 18 Warning(s).
 
 <h2>Software Packages used:</h2>
@@ -114,33 +114,33 @@ Package Vendor: Keil
 
    * Component: Keil::Device:Startup:1.0.0
       Source file:   Device\Source\ARM\startup_stm32f10x_md.s
-      Include file:  RTE_Driver\Config\RTE_Device.h
       Source file:   Device\Source\system_stm32f10x.c
+      Include file:  RTE_Driver\Config\RTE_Device.h
       Source file:   Device\Source\ARM\STM32F1xx_OPT.s
 
    * Component: Keil::Device:StdPeriph Drivers:Framework:3.6.0
+      Include file:  Device\StdPeriph_Driver\inc\misc.h
       Source file:   Device\StdPeriph_Driver\templates\stm32f10x_conf.h
+      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_it.c
       Include file:  Device\StdPeriph_Driver\templates\stm32f10x_it.h
       Source file:   Device\StdPeriph_Driver\src\misc.c
-      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_it.c
-      Include file:  Device\StdPeriph_Driver\inc\misc.h
 
    * Component: Keil::Device:StdPeriph Drivers:GPIO:3.6.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f10x_gpio.c
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_gpio.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_gpio.c
 
    * Component: Keil::Device:StdPeriph Drivers:RCC:3.6.0
       Source file:   Device\StdPeriph_Driver\src\stm32f10x_rcc.c
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_rcc.h
 
    * Component: Keil::Device:StdPeriph Drivers:TIM:3.6.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_tim.h
       Source file:   Device\StdPeriph_Driver\src\stm32f10x_tim.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_tim.h
 
    * Component: Keil::Device:StdPeriph Drivers:USART:3.6.0
       Source file:   Device\StdPeriph_Driver\src\stm32f10x_usart.c
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_usart.h
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>

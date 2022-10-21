@@ -333,8 +333,7 @@ static unsigned char checksum(const char *_data_str_)
 {
 	
     unsigned char location, i = 0;
-    static unsigned char tempcrc;
-    tempcrc = 0;
+    static unsigned char tempcrc = 0;
     while(*(_data_str_+i)!= '\0')
     {
         if(*(_data_str_+i) == ',')
