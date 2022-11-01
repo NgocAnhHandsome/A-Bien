@@ -1,0 +1,5 @@
+LCD.pbi: E:\1.STM8\3.project_STM8S103F3P6\9.CODE_LCD_1602\user\GPIO.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\stm8\inc\c\intrinsics.h \
+  E:\1.STM8\3.project_STM8S103F3P6\9.CODE_LCD_1602\project\..\library\stm8s.h \
+  E:\1.STM8\3.project_STM8S103F3P6\9.CODE_LCD_1602\user\LCD.h \
+  E:\1.STM8\3.project_STM8S103F3P6\9.CODE_LCD_1602\user\LCD.c

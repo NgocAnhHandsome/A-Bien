@@ -16,8 +16,8 @@ typedef struct
 
 typedef enum
 {
-    Ringbuffer_Error 	    = 0,
-    Ringbuffer_OK 	    = 1,
+    Ringbuffer_Error 	     =  0,
+    Ringbuffer_OK 	        = 1,
     Ringbuffer_Full         = 2,
     Ringbuffer_empty        = 3,
     Ringbuffer_pop_done     = 4,

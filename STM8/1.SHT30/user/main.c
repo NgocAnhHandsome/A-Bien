@@ -4,6 +4,8 @@
 #include "sht30.h"
 #include "sys.h"
 #include "device_command.h"
+#include "GPIO.h"
+
 
 int i,j,k,n;
 
@@ -30,34 +32,13 @@ int main( void )
 {
   UART_Init(9600);
   UART_Send_String("PTIT\n");
-
-  for(i = 0; i < 4;i++)
-  {
-          for(j = 0; j < 8; j++)
-          {
-                  for(k = 0; k < 3; k++)
-                  {
-                          test.type_msg = Type_command_arr[i];
-                          test.port_number = Port_number_arr[j];
-                          test.type_sensor = Type_sensor_arr[k];
-                          test.Sensor.Sensor_1      = 1.42;
-                          if(comm_create_command(&test) == COMM_OK)
-                          {
-                                  UART_Send_String(test.datastr);
-                          }
-                          else
-                          {
-                                  UART_Send_String("Error\n");
-                          }
-                          delay(100);
-                  }
-          }
-  }
-
-
+  GPIO_DeInit(GPIOD);
+  GPIO_Init(GPIOD, GPIO_PIN_4, GPIO_MODE_OUT_PP_LOW_FAST);
+  GPIO_WriteHigh(GPIOD,GPIO_PIN_4);
   while (1)
   {
-    
+    UART_Send_String("test\n");
+    delay(1000);
   }
 }
 

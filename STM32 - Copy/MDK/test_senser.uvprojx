@@ -10,13 +10,12 @@
       <TargetName>test</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060750::V5.06 update 6 (build 750)::ARMCC</pCCUsed>
-      <uAC6>0</uAC6>
+      <pCCUsed>5060300::V5.06 update 3 (build 300)::ARMCC</pCCUsed>
       <TargetOption>
         <TargetCommonOption>
           <Device>STM32F103C8</Device>
           <Vendor>STMicroelectronics</Vendor>
-          <PackID>Keil.STM32F1xx_DFP.2.4.0</PackID>
+          <PackID>Keil.STM32F1xx_DFP.2.1.0</PackID>
           <PackURL>http://www.keil.com/pack/</PackURL>
           <Cpu>IRAM(0x20000000,0x00005000) IROM(0x08000000,0x00010000) CPUTYPE("Cortex-M3") CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -184,7 +183,6 @@
             <hadXRAM>0</hadXRAM>
             <uocXRam>0</uocXRam>
             <RvdsVP>0</RvdsVP>
-            <RvdsMve>0</RvdsMve>
             <hadIRAM2>0</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
@@ -325,7 +323,6 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>1</uC99>
-            <uGnu>1</uGnu>
             <useXO>0</useXO>
             <v6Lang>1</v6Lang>
             <v6LangP>1</v6LangP>
@@ -402,6 +399,11 @@
               <FileType>5</FileType>
               <FilePath>..\USER\CONFIG_STM32F10X.h</FilePath>
             </File>
+            <File>
+              <FileName>define.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\USER\define.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -426,6 +428,11 @@
               <FileName>uart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\USER\uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>define.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USER\define.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -489,7 +496,7 @@
       <file attr="config" category="header" name="RTE_Driver\Config\RTE_Device.h" version="1.1.2">
         <instance index="0">RTE\Device\STM32F103C8\RTE_Device.h</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.0.0" condition="STM32F1xx CMSIS"/>
-        <package name="STM32F1xx_DFP" schemaVersion="1.7.2" url="http://www.keil.com/pack/" vendor="Keil" version="2.4.0"/>
+        <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="2.1.0"/>
         <targetInfos>
           <targetInfo name="test"/>
         </targetInfos>
@@ -497,15 +504,15 @@
       <file attr="config" category="source" condition="STM32F1xx MD ARMCC" name="Device\Source\ARM\startup_stm32f10x_md.s" version="1.0.1">
         <instance index="0">RTE\Device\STM32F103C8\startup_stm32f10x_md.s</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.0.0" condition="STM32F1xx CMSIS"/>
-        <package name="STM32F1xx_DFP" schemaVersion="1.7.2" url="http://www.keil.com/pack/" vendor="Keil" version="2.4.0"/>
+        <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="2.1.0"/>
         <targetInfos>
           <targetInfo name="test"/>
         </targetInfos>
       </file>
       <file attr="config" category="source" name="Device\StdPeriph_Driver\templates\stm32f10x_conf.h" version="3.6.0">
         <instance index="0">RTE\Device\STM32F103C8\stm32f10x_conf.h</instance>
-        <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="Framework" Cvendor="Keil" Cversion="3.6.0" condition="STM32F1xx STDPERIPH"/>
-        <package name="STM32F1xx_DFP" schemaVersion="1.7.2" url="http://www.keil.com/pack/" vendor="Keil" version="2.4.0"/>
+        <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="Framework" Cvendor="Keil" Cversion="3.5.1" condition="STM32F1xx STDPERIPH"/>
+        <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="2.1.0"/>
         <targetInfos>
           <targetInfo name="test"/>
         </targetInfos>
@@ -513,7 +520,7 @@
       <file attr="config" category="source" name="Device\Source\system_stm32f10x.c" version="1.0.1">
         <instance index="0">RTE\Device\STM32F103C8\system_stm32f10x.c</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.0.0" condition="STM32F1xx CMSIS"/>
-        <package name="STM32F1xx_DFP" schemaVersion="1.7.2" url="http://www.keil.com/pack/" vendor="Keil" version="2.4.0"/>
+        <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="2.1.0"/>
         <targetInfos>
           <targetInfo name="test"/>
         </targetInfos>

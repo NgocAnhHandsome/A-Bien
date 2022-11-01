@@ -1,3 +1,2 @@
-sys.pbi: \
-  E:\Embedded\ system\STM8_project\Surveillance_equipment_Clover-work_on\1.Sensor\1.SHT30\user\sys.c \
-  E:\Embedded\ system\STM8_project\Surveillance_equipment_Clover-work_on\1.Sensor\1.SHT30\user/sys.h
+sys.pbi: C:\Users\hnaco\Desktop\A\ Bien\STM8\1.SHT30\user\sys.c \
+  C:\Users\hnaco\Desktop\A\ Bien\STM8\1.SHT30\user/sys.h

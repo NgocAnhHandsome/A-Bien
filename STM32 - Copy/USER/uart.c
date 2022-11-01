@@ -204,16 +204,16 @@ void USART3_IRQHandler(void)
 	}
 }
 
-//struct __FILE {
-//int dummy;
-//};
-//FILE __stdout;
-//int fputc(int ch, FILE *f) {
-//UART1_SendChar(ch);
-////	UART2_SendChar(ch);
-////	UART3_SendChar(ch);
-//return ch;
-//}
+struct __FILE {
+int dummy;
+};
+FILE __stdout;
+int fputc(int ch, FILE *f) {
+UART1_SendChar(ch);
+//	UART2_SendChar(ch);
+//	UART3_SendChar(ch);
+return ch;
+}
 
 
 /********************************* END OF FILE ********************************/

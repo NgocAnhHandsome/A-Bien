@@ -2177,6 +2177,9 @@
     <group>
         <name>library</name>
         <file>
+            <name>$PROJ_DIR$\..\user\GPIO.h</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\library\STM8CONFIG.h</name>
         </file>
         <file>
@@ -2196,6 +2199,9 @@
         <name>user</name>
         <file>
             <name>$PROJ_DIR$\..\user\device_command.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\user\GPIO.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\user\i2c.c</name>
